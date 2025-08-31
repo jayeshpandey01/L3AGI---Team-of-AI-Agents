@@ -1,20 +1,25 @@
-# L3AGI - Team of AI Agents
-
-<p align="center">
-  <a href="">
-    <img src="./apps/ui/src/assets/images/l3_logo.png" alt="L3AGI logo" width="150px" height="150px"/>
-  </a>
-</p>
-
-<p align="center"><i>Open-source tool that enables AI Assistants to collaborate together as effectively as human teams.</i></p>
+# L3AGI - The Power of AI Team Collaboration
 
 <div align="center">
+  <img src="./apps/ui/src/assets/images/l3_logo.png" alt="L3AGI logo" width="180px" height="180px"/>
+  
+  ### *Empowering AI Assistants to Collaborate Like Human Teams*
+  
+  [![Discord Community](https://img.shields.io/discord/1085735429426401340?label=Discord&logo=discord&style=flat-square&color=5865F2)](https://discord.gg/FcVZKcaRCV)
+  [![GitHub Stars](https://img.shields.io/github/stars/l3vels/L3AGI?style=flat-square&color=yellow)](https://github.com/l3vels/L3AGI/stargazers)
+  [![GitHub Forks](https://img.shields.io/github/forks/l3vels/L3AGI?style=flat-square&color=blue)](https://github.com/l3vels/L3AGI/fork)
+  [![GitHub Release](https://img.shields.io/github/v/release/l3vels/L3AGI?style=flat-square&color=brightgreen)](https://github.com/l3vels/L3AGI/releases)
+  [![License](https://img.shields.io/github/license/l3vels/L3AGI?style=flat-square&color=orange)](LICENSE)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
-[![Discord](https://img.shields.io/discord/1085735429426401340?label=Join%20L3AGI&logo=discord&style=for-the-badge)](https://discord.gg/FcVZKcaRCV)
-[![GitHub Stars](https://img.shields.io/github/stars/l3vels/L3AGI?style=for-the-badge)](https://github.com/l3vels/L3AGI/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/l3vels/L3AGI?style=for-the-badge)](https://github.com/l3vels/L3AGI/fork)
-[![GitHub Release](https://img.shields.io/github/release/l3vels/L3AGI?&label=Latest&style=for-the-badge)](https://github.com/l3vels/L3AGI/releases)
-[![License](https://img.shields.io/github/license/l3vels/L3AGI?style=for-the-badge)](LICENSE)
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-documentation">Documentation</a> •
+  <a href="#-community">Community</a>
+</div>
+
+---
 
 </div>
 
@@ -61,19 +66,30 @@ Of course! Here's the revised "Features" section with the requested emojis and i
 
 ---
 
+## 🌟 Overview
+
+L3AGI is a cutting-edge open-source platform that revolutionizes AI collaboration. Our platform enables multiple AI assistants to work together seamlessly, solving complex problems with the coordination and efficiency of human teams.
+
+<div align="center">
+  <a href="https://youtu.be/R2hYNONKwKI" target="_blank">
+    <img src="docs/assets/playYTFeatures.png" alt="Watch Demo Video" style="max-width: 600px;" />
+    <p><em>▶️ Watch Demo Video</em></p>
+  </a>
+</div>
+
 ## ✨ Features
 
-<a href="https://youtu.be/R2hYNONKwKI" target="_blank" rel="noopener noreferrer">
-    <img src="docs/assets/playYTFeatures.png" alt="Watch the video">
-</a>
+### 🤖 Advanced AI Collaboration
+- **Team Management**: Create, organize, and coordinate teams of AI assistants
+- **Task Distribution**: Intelligently assign and distribute complex tasks
+- **Real-time Coordination**: Enable seamless communication between AI agents
+- **Performance Monitoring**: Track and optimize team performance
 
-L3AGI offers a robust set of functionalities that empower you to design, supervise, and execute both autonomous AI Assistants and Teams of Assistants. Here's what sets us apart:
-
-- **🤖 Team Of Assistants**: L3AGI pioneers in facilitating the creation and management of Teams of AI Assistants. These are groups of individual AI Assistants that collaborate seamlessly for more complex tasks and simulations.
-
-- **🔧 Autonomous AI Assistants**: Design and oversee standalone AI Assistants that act autonomously based on their configuration.
-
-- **🧠 Assistant Memory**: Equip your AI Assistants with the ability to retain and recall information, enabling them to make more informed decisions.
+### 🧠 Cognitive Capabilities
+- **Memory System**: Long-term information retention and recall
+- **Learning Adaptation**: Continuous improvement from interactions
+- **Context Awareness**: Understanding and maintaining conversation context
+- **Knowledge Integration**: Combining information from multiple sources
 
 - **🔗 Data Sources & Integration**:
   - Connect your AI Assistants to an array of data sources for efficient information retrieval and processing.
@@ -135,41 +151,45 @@ L3AGI offers a robust set of functionalities that empower you to design, supervi
     <img src="docs/assets/quickstart.png" alt="Watch the video">
 </a>
 
-### Pre-requisites
+## 🚀 Quick Start
 
-- Docker 🐳
-- Docker Compose
+### Prerequisites
+- Docker (version 20.10 or later) 🐳
+- Docker Compose (version 2.0 or later)
+- Git
 
-1. **Clone the repository:**
+### One-Command Setup
+```bash
+# Clone and run setup script
+git clone https://github.com/l3vels/L3AGI.git && cd L3AGI && ./setup.sh
+```
 
+### Step-by-Step Installation
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/l3vels/L3AGI.git
-   ```
-
-2. **Navigate to the project directory:**
-
-   ```bash
    cd L3AGI
    ```
 
-3. **Setup Git Hooks**
-
+2. **Configure Environment**
    ```bash
-   chmod +x setup.sh
-   ./setup.sh
+   # Setup environment files
+   cp apps/server/.env.example apps/server/.env
+   cp zep/.env.example zep/.env
+   
+   # Configure Azure Web PubSub
+   # Follow guide at docs/azure.md
    ```
 
-4. **Create `.env` file from `.env.example` in `apps/server` directory and configure**
-   - **Configure `Azure Web PubSub` using [our guide here](docs/azure.md)**
-5. **Create `.env` file from `.env.example` in `zep` directory and configure**
-
-6. 🐳 **Run Docker Compose:**
-
+3. **Launch the Application**
    ```bash
+   # Build and start all services
    docker-compose up --build
    ```
 
-   This will build and start both the React UI and FastAPI services.
+### 🌐 Access the Platform
+- **Web Interface**: [http://localhost:3000](http://localhost:3000)
+- **API Documentation**: [http://localhost:4000/docs](http://localhost:4000/docs)
 
 ## Access the Services
 
@@ -186,24 +206,27 @@ L3AGI offers a robust set of functionalities that empower you to design, supervi
 └── docker-compose.yml # Main Docker Compose File
 ```
 
-## Tech Stack
+## 🛠 Technology Stack
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-6f7f6f?style=for-the-badge&logo=SQLAlchemy&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-b7d019?style=for-the-badge&logo=LangChain&logoColor=white)
-![Zep](https://img.shields.io/badge/Zep-7e56c2?style=for-the-badge&logo=zep&logoColor=white)
-![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+<div align="center">
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
-![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
-![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
+### Backend Technologies
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white)](https://fastapi.tiangolo.com/)
+[![LangChain](https://img.shields.io/badge/🦜_LangChain-b7d019?style=for-the-badge)](https://github.com/hwchase17/langchain)
+[![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
-![Microsoft Azure](https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
-![AWS](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+### Frontend Stack
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+
+### Infrastructure & Tools
+[![GitHub Actions](https://img.shields.io/badge/CI%2FCD-232F3E?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Azure](https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://azure.microsoft.com/)
+[![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
+
+</div>
 
 ## L3AGI Architecture
 
