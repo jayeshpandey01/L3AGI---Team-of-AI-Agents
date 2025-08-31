@@ -1,0 +1,13 @@
+query getApiKeys @api(name: "ai") {
+  getApiKeys @rest(type: "ApiKeys", path: "/api-key", method: "GET", endpoint: "ai") {
+    id
+    name
+    token
+    description
+    is_deleted
+    account_id
+    created_on
+    created_by
+    modified_by
+  }
+}

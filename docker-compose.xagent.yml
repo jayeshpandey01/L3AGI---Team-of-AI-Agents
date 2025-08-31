@@ -1,0 +1,85 @@
+# L3AGI XAgent Docker Compose Configuration
+# Based on XAgent's docker-compose.yml but customized for L3AGI integration
+
+version: '3.8'
+
+services:
+  toolserver-manager:
+    image: openbmb/toolserver-manager:latest
+    container_name: xagent-toolserver-manager
+    ports:
+      - "8080:8080"
+    environment:
+      - TOOLSERVER_PORT=8080
+      - TOOLSERVER_HOST=0.0.0.0
+    volumes:
+      - ./workspace:/workspace
+      - ./logs:/logs
+    networks:
+      - xagent-network
+    restart: unless-stopped
+
+  xagent-mongodb:
+    image: mongo:6.0
+    container_name: xagent-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: xagent
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - xagent-network
+    restart: unless-stopped
+
+  xagent-redis:
+    image: redis:7-alpine
+    container_name: xagent-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - xagent-network
+    restart: unless-stopped
+
+  xagent-server:
+    image: openbmb/xagent-server:latest
+    container_name: xagent-server
+    ports:
+      - "8090:8090"
+    environment:
+      - MONGODB_URI=mongodb://admin:password@xagent-mongodb:27017/
+      - REDIS_URI=redis://xagent-redis:6379
+      - TOOLSERVER_URL=http://toolserver-manager:8080
+      - SERVER_PORT=8090
+    depends_on:
+      - xagent-mongodb
+      - xagent-redis
+      - toolserver-manager
+    networks:
+      - xagent-network
+    restart: unless-stopped
+
+  xagent-web:
+    image: openbmb/xagent-web:latest
+    container_name: xagent-web
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8090
+    depends_on:
+      - xagent-server
+    networks:
+      - xagent-network
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
+  redis_data:
+
+networks:
+  xagent-network:
+    driver: bridge

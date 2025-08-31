@@ -1,0 +1,7 @@
+#import "./dataSourceFragment.gql"
+
+query dataSources @api(name: "ai") {
+  dataSources @rest(type: "Datasource", path: "/datasource", method: "GET", endpoint: "ai") {
+    ...DataSourceFragment
+  }
+}

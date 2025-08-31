@@ -1,0 +1,8 @@
+#import "./scheduleFragment.gql"
+
+query scheduleById($id: id!) @api(name: "ai") {
+  scheduleById(id: $id)
+    @rest(type: "Schedule", path: "/schedule/{args.id}", method: "GET", endpoint: "ai") {
+    ...ScheduleFragment
+  }
+}

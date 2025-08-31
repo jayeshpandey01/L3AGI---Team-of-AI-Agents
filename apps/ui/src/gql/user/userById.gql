@@ -1,0 +1,8 @@
+query userById($id: ID!) @api(name: account) {
+  userById(user_id: $id) {
+    id
+    email
+    name
+    created_on
+  }
+}

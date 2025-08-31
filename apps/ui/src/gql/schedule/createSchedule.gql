@@ -1,0 +1,8 @@
+#import "./scheduleFragment.gql"
+
+mutation createSchedule($input: input!) @api(name: ai) {
+  createSchedule(input: $input)
+    @rest(type: "Schedule", path: "/schedule", method: "POST", bodyKey: "input", endpoint: "ai") {
+    ...ScheduleFragment
+  }
+}

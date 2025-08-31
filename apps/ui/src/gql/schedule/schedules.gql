@@ -1,0 +1,7 @@
+#import "./scheduleFragment.gql"
+
+query schedules @api(name: "ai") {
+  schedules @rest(type: "Schedule", path: "/schedule", method: "GET", endpoint: "ai") {
+    ...ScheduleFragment
+  }
+}

@@ -1,0 +1,3 @@
+[submodule "third_party/xagent"]
+	path = third_party/xagent
+	url = https://github.com/OpenBMB/XAgent.git

@@ -1,0 +1,7 @@
+#import "./configFragment.gql"
+
+query configs @api(name: "ai") {
+  configs @rest(type: "Config", path: "/config", method: "GET", endpoint: "ai") {
+    ...ConfigFragment
+  }
+}

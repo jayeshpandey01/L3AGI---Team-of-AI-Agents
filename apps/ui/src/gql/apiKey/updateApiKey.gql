@@ -1,0 +1,17 @@
+mutation updateApiKey($id: id!, $input: input!) @api(name: "ai") {
+  updateApiKey(id: $id, input: $input)
+    @rest(type: "ApiKeys", path: "/api-key/{args.id}", method: "PUT", endpoint: "ai") {
+    success
+    apiKey {
+      id
+      name
+      token
+      description
+      is_deleted
+      account_id
+      created_on
+      created_by
+      modified_by
+    }
+  }
+}

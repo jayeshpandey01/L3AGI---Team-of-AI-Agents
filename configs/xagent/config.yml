@@ -1,0 +1,127 @@
+# L3AGI XAgent Configuration
+# Based on XAgent's default config.yml but customized for L3AGI integration
+
+api_keys:
+  gpt-3.5-turbo-16k:
+    - api_key: ${OPENAI_API_KEY}
+      model: gpt-3.5-turbo-16k
+      temperature: 0.1
+  gpt-4:    
+    - api_key: ${OPENAI_API_KEY}
+      model: gpt-4
+      temperature: 0.1
+  gpt-4-32k:
+    - api_key: ${OPENAI_API_KEY}
+      model: gpt-4-32k
+      temperature: 0.1
+
+default_request_type: openai
+default_completion_kwargs:
+  model: gpt-4
+  temperature: 0.1
+  request_timeout: 60
+
+enable_summary: true
+summary:
+  single_action_max_length: 2048
+  max_return_length: 12384
+
+# Use L3AGI's ToolServer integration
+use_selfhost_toolserver: true
+selfhost_toolserver_url: ${TOOLSERVER_URL:-http://localhost:8080}
+
+# L3AGI-specific configuration
+l3agi_integration:
+  enabled: true
+  memory_backend: zep
+  zep_url: ${ZEP_API_URL}
+  zep_api_key: ${ZEP_API_KEY}
+  
+  # Tool mapping configuration
+  tool_adapters:
+    - name: l3agi_tools
+      enabled: true
+      adapter_class: L3AGIToolAdapter
+    
+  # Memory integration
+  memory:
+    type: zep
+    session_key: "chat_history"
+    human_name: "Human"
+    ai_name: "AI"
+    
+  # Telemetry integration
+  telemetry:
+    enabled: true
+    run_logs_manager: true
+    callback_handlers: true
+
+# XAgent core configuration
+max_retry_times: 5
+max_subtask_chain_length: 15
+max_plan_refine_chain_length: 3
+max_plan_tree_depth: 3
+max_plan_tree_width: 5
+max_plan_length: 8192
+
+rapidapi_retrieve_tool_count: 0
+
+enable_ask_human_for_help: False
+
+# L3AGI tool blacklist (tools that should not be executed)
+tool_blacklist:
+  - FileSystemEnv_print_filesys_struture
+  - system_commands  # Restrict system command execution
+
+# Record directory for XAgent's running_records
+record_dir: ./logs/xagent
+
+# Experimental features
+experiment:
+  redo_action: false
+  
+# L3AGI-specific tool configurations
+l3agi_tools:
+  # Search tools
+  web_search:
+    enabled: true
+    engines: ["google", "bing", "duckduckgo", "wikipedia", "arxiv"]
+    max_results: 10
+    
+  # Database tools
+  database:
+    postgres:
+      enabled: true
+      connection_pool: 5
+      url: ${POSTGRES_URL}
+    mysql:
+      enabled: true
+      connection_pool: 5
+      url: ${MYSQL_URL}
+      
+  # File operations
+  file_editor:
+    enabled: true
+    allowed_paths: ["/workspace", "/tmp", "./local_workspace"]
+    max_file_size: "10MB"
+    
+  # Web browser tools
+  web_browser:
+    enabled: true
+    headless: true
+    user_agent: "L3AGI-XAgent/1.0"
+    
+  # Python notebook execution
+  python_notebook:
+    enabled: true
+    timeout: 300
+    memory_limit: "512MB"
+    allowed_packages: ["matplotlib", "pandas", "numpy", "requests", "openai"]
+    
+  # RapidAPI integration
+  rapidapi:
+    enabled: true
+    timeout: 60
+    retry_attempts: 3
+    rate_limit: 100
+    api_key: ${RAPIDAPI_KEY}

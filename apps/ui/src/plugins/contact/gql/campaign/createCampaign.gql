@@ -1,0 +1,24 @@
+mutation createCampaign($input: input!) @api(name: pro) {
+  createCampaign(input: $input)
+    @rest(
+      type: "Campaign"
+      path: "/v1/campaign"
+      method: "POST"
+      bodyKey: "input"
+      endpoint: "pro"
+    ) {
+    name
+    agent_id
+    group_id
+    start_date
+    type
+    status
+    total_calls
+    call_statuses
+    retry_attempts
+    retry_interval
+    working_hours_start
+    working_hours_end
+    timezone
+  }
+}
