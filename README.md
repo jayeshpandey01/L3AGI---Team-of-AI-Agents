@@ -1,3 +1,5 @@
+# L3AGI - Team of AI Agents
+
 <p align="center">
   <a href="">
     <img src="./apps/ui/src/assets/images/l3_logo.png" alt="L3AGI logo" width="150px" height="150px"/>
@@ -5,26 +7,27 @@
 </p>
 
 <p align="center"><i>Open-source tool that enables AI Assistants to collaborate together as effectively as human teams.</i></p>
-    
-<h3 align="center">
-	<a href="./docs/basic.md">Docs</a>
-	<span> | </span>
-	<a href="https://discord.gg/FcVZKcaRCV">Community Discord</a>
-</h3>
 
-<p align="center">
-<a href="https://github.com/l3vels/L3AGI/fork" target="blank">
-<img src="https://img.shields.io/github/forks/l3vels/L3AGI?style=for-the-badge" alt="L3AGI forks"/>
-</a>
+<div align="center">
 
-<a href="https://github.com/l3vels/L3AGI/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/l3vels/L3AGI?style=for-the-badge" alt="L3AGI stars"/>
-</a>
-<a href='https://github.com/l3vels/L3AGI/releases'>
-<img src='https://img.shields.io/github/release/l3vels/L3AGI?&label=Latest&style=for-the-badge'>
-</a>
+[![Discord](https://img.shields.io/discord/1085735429426401340?label=Join%20L3AGI&logo=discord&style=for-the-badge)](https://discord.gg/FcVZKcaRCV)
+[![GitHub Stars](https://img.shields.io/github/stars/l3vels/L3AGI?style=for-the-badge)](https://github.com/l3vels/L3AGI/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/l3vels/L3AGI?style=for-the-badge)](https://github.com/l3vels/L3AGI/fork)
+[![GitHub Release](https://img.shields.io/github/release/l3vels/L3AGI?&label=Latest&style=for-the-badge)](https://github.com/l3vels/L3AGI/releases)
+[![License](https://img.shields.io/github/license/l3vels/L3AGI?style=for-the-badge)](LICENSE)
 
-</p>
+</div>
+
+## 📚 Table of Contents
+
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Quick Start Guide](#-quick-start-guide)
+- [Installation](#-installation)
+- [Tech Stack](#-tech-stack)
+- [Architecture](#-architecture)
+- [Contributing](#-contributing)
+- [Support](#-support)
 
 <p align="center"><b>Follow L3AGI </b></p>
 
@@ -229,5 +232,6 @@ This initiative is currently in its developmental phase and might have some inco
 [![Bakhutashvili](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85249145?v=4&w=50&h=50&mask=circle)](https://github.com/DavitBakhutashvili)
 [![Theiskaa](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/59066341?v=4&w=50&h=50&mask=circle)](https://github.com/theiskaa)
 [![edufaraday](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/56274334?v=4&w=50&h=50&mask=circle)](https://github.com/edufaraday)
-#   L 3 A G I - - - T e a m - o f - A I - A g e n t s  
+#   L 3 A G I - - - T e a m - o f - A I - A g e n t s 
+ 
  
